@@ -4,12 +4,12 @@ var txtInput = document.querySelector("#txt-Input");
 var outputDiv = document.querySelector("#output");
 
 //var serverUrl = "https://api.funtranslations.com/translate/groot.json";
-var serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
+var serverUrl = "https://api.funtranslations.com/translate/minion.json"
 //var serverUrl = "https://api.funtranslations.com/translate/minion.json";
 
 
 function getTranslateURL(input){
-    return serverUrl + "?" + "txt=" + input;   
+    return serverUrl + "?text=" + input;   
 }
 
 function errorHandler(error){
