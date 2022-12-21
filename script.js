@@ -4,12 +4,15 @@ var txtInput = document.querySelector("#txt-Input");
 var outputDiv = document.querySelector("#output");
 
 //var serverUrl = "https://api.funtranslations.com/translate/groot.json";
-var serverUrl = "https://api.funtranslations.com/translate/minion.json"
+var serverUrl = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json"
 //var serverUrl = "https://api.funtranslations.com/translate/minion.json";
+//var serverUrl = "https://api.funtranslations.com/translate/pirate.json";
+
+var serverURL = "https://api.funtranslations.com/translate/groot.json"
 
 
 function getTranslateURL(input){
-    return serverUrl + "?text=" + input;   
+    return serverUrl + "?" + "txt=" + input;   
 }
 
 function errorHandler(error){
@@ -19,12 +22,10 @@ function errorHandler(error){
 
 function clickHandler() {    
     var inputText = txtInput.value; //extracting inputText
-    //fetch using translation URL, calling server for processing
-   fetch(getTranslateURL(inputText)) 
-   .then(response => response.json())
-   .then(json => {var translatedText=json.contents.translated;
-    outputDiv.innerText=translatedText;}) //output as innertext
+    fetch(getTranslationURL(inputText)) 
+   .then(read => read.json())
+   .then(reads => {var translatedText=reads.contents.translated;
+    outputDiv.innerText=translatedText;})
     .catch(errorHandler)
    }
-
-btnTranslate.addEventListener("click", clickHandler);
+   btnTranslate.addEventListener("click",clickHandler);
